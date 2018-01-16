@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>sell</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/icon.css">
+    <!-- <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script> -->
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+<script>
+    function js_getDPI() {
+        var arrDPI = new Array();
+        if (window.screen.deviceXDPI != undefined) {
+            arrDPI[0] = window.screen.deviceXDPI;
+            arrDPI[1] = window.screen.deviceYDPI;
+        } else {
+            var tmpNode = document.createElement("DIV");
+            tmpNode.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+            document.body.appendChild(tmpNode);
+            arrDPI[0] = parseInt(tmpNode.offsetWidth);
+            arrDPI[1] = parseInt(tmpNode.offsetHeight);
+            tmpNode.parentNode.removeChild(tmpNode);
+        }
+        return arrDPI;
+    }
+    /* 因为我们后面用的是rem布局，所以这里做下处理，根据不用设备分辨率更改跟字体大小。 rem相关布局[请参考](http://www.jianshu.com/p/65f80d4b44bb)*/
+    (function(win, doc) {
+        change();
+
+        function change() {
+            doc.documentElement.style.fontSize = doc.documentElement.clientWidth * 100 / 750 + 'px';
+        }
+        //alert(js_getDPI())
+        win.addEventListener('resize', change, false);
+        win.addEventListener('orientationchange', change, false); /* 这个是移动端设备横屏、竖屏转换时触发的事件处理函数 */
+    })(window, document);
+</script>
+
+</html>
