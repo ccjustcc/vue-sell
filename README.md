@@ -1,3 +1,8 @@
+# 一个基于vue的外卖app。
+  > js： 使用vue框架，vuerouter 路由 ，better-scroll插件进行模拟移动端的原生滑动
+  > css:使用sass,使用 rem 布局
+
+
 # sell
 
 > A Vue.js project
@@ -28,3 +33,4 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
