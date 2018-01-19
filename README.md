@@ -6,11 +6,11 @@
   这个项目并不需要使用vuex，只是当练手，真正需要的使用点击[这里](https://github.com/ccjustcc/vue-music)
 
 
-``
+```
    使用
        npm install 
        npm start
 
-``
+```
 
 
